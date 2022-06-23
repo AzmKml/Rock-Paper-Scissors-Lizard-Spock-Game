@@ -1,23 +1,9 @@
-body {
-    font-family: 'JetBrains Mono', monospace;
-  }
-  
-  button {
-    font-family: 'JetBrains Mono', monospace;
-    text-decoration: none;
-    border: none;
-    padding: 10px 40px;
-    background-color: rgb(128, 0, 0);
-    color: #fff;
-    outline: none;
-    box-shadow: 3px 6px 6px 1px rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform ease 1s;
-  }
-  
-  button:hover {
-    transform: scale(0.82);
-    background-color: rgba(156, 29, 29, 0.74);
-  }
+
+
+.choices {
+
+    display: flex;
+    flex-direction: row;
+    
+ }
+
