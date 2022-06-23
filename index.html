@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors Spock Lizard Game </title>
-    <link rel="stylesheet" href="index.css">
+    <title>Rock, Paper, Scissor, Lizard, Spock Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginScreen.css">
 </head>
+
 <body>
-    <header>
-        <h1>Rock Paper Scissors Spock Lizard</h1>
-    </header>
-
-    <div class="score-board">r
-        <div id="user-name" class="badge">User Name</div>
-        <div id="computer-name" class="badge">Mr.AI</div>
-        <p id="round">Round 1</p>
-        <span id="user-score">0</span>:<span id="computer-score">0</span>
-    </div> 
-
-    <div class="result">
-    <p> You Win ! </p>
-    </div>
-
-    <div class="choices">
-        <div class="choices" id="rock">
-            <input type="image" img src="./picHackathon2/rock.png" alt="rock">
-        </div>
-        <div class="choices" id="paper">
-            <input type="image"  src="./picHackathon2/paper.png" alt="paper">
-        </div>
-        <div class="choices" id="scissors">
-            <input type="image"   src="./picHackathon2/scissors.png" alt="scissors">
-        </div>
-        <div class="choices" id="lizard">
-            <input type="image" src="./picHackathon2/lizard.png" alt="lizard">
-        </div>
-        <div class="choices" id="spock">
-            <input type="image" src="./picHackathon2/spock.png" alt="spock">
+    <div class="modal">
+        <h1 style="position: absolute; top: 0; left: 50px; color: red; font-size: 50px;"></h1>
+        <div class="style1">
+            <!-- <h1> Masuk </h1> -->
+            <div class="style3">
+                <form >
+                    
+                    <h1 class="judul">ROCK, PAPER, SCISSORS.... <br/>LIZARD, SPOCK</h1>
+                    <h3><br/>"In a star system far away... <br/><br/> SPOCK really needs your help to beat a super AI ran amok.."<br/></h3>
+                    <h2> <br/>Tell us your name! </h1>
+                    <input id="style1" type="text" placeholder="Name..">
+                    <!-- <input id="style1" type="round" placeholder="Kata sandi">  -->
+                    <h2>How many round do you need?</h3>
+                    <input id="style1" type="text" placeholder="Rounds.. e.g: 8">
+                    <!-- <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                          <a href="#">5</a>
+                          <a href="#">7</a>
+                          <a href="#">9</a>
+                        </div>
+                      </div> -->
+                    <input id="style2" class="go" type="button"  value="GO!"/>
+                </form>
+            </div>
         </div>
     </div>
-    <div>
-    <button type="button" id="load-button" class="tombol">PLAY</button>
-    </div>
 
-    <p id="action-message">Choose your option !</p>
-    <!-- tombol reset -->
-    <span class="reset"><span>Reset</span></span>
-    <script src="./index.js"></script>
+    <!-- result -->
+    <main>
+        <section id="result">
+            <p id="round-message">ROUND <span>1</span></p>
+            <div id="score">
+                <span id="player1-score" class="points">0</span>
+                :
+                <span id="player2-score" class="points">0</span>
+                <div>
+                    <span class="info">result</span>
+                </div>
+            </div>
+            
+        </section>
+    
+        <!-- section game yang dibagi dua layarnya -->
+    
+        <section id="player1" class="players">
+            <span class="name">userName</span>
+            <!-- yang dipilih akan muncul ke sini -->
+            <div class="selected-option">
+                <span class="option" data-index="0"><img class="img-player" style="width:50px"></span>
+            </div>
+
+            <!-- plihan -->
+            <div class="available-options">
+                <span class="option" data-index="0"><img class="lizard" src="picHackathon2/lizard.png" alt="Lizard" style="width:50px"></span>
+                <span class="option" data-index="1"><img class="paper" src="picHackathon2/paper.png" alt="Paper" style="width:50px"></span>
+                <span class="option" data-index="2"><img class="rock" src="picHackathon2/rock.png" alt="Rock" style="width:50px"></span>
+                <span class="option" data-index="3"><img class="scissors" src="picHackathon2/scissors.png" alt="Scissor" style="width:50px"></span>
+                <span class="option" data-index="4"><img class="spock" src="picHackathon2/spock.png" alt="Spock" style="width:50px"></span>
+            </div>
+        </section>
+
+
+        <section id="player2" class="players">
+            <span class="name">Mr. AI</span>
+            <!-- yang dipilih akan muncul ke sini -->
+            <div class="selected-option">
+                <span class="option" data-index="0"><img class="img-komputer" style="width:50px"></span>
+            </div>
+
+        </section>
+
+        <!-- Reset button -->
+        <span class="reset"><span>Reset</span></span>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
