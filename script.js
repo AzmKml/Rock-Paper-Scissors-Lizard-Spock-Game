@@ -1,7 +1,6 @@
 let loginPage = document.querySelector('.go')
 loginPage.addEventListener('click', function(){
     document.querySelector('.modal').className += " hide"
-// document.querySelector(.modal)
 })
 
 
@@ -65,7 +64,7 @@ pilihan.forEach(function(pil){
 		const pilihanComputer = getPilihanComputer();
 		const pilihanPlayer = pil.className;// className artinya mengambil nama class yg sudah kita pilih
 		const hasil = getHasil(pilihanComputer, pilihanPlayer);
-		
+		console.log('asd')
         const imgPlayer = document.querySelector('.img-player');
         imgPlayer.setAttribute('src', 'picHackathon2/' + pilihanPlayer + '.png');
 
