@@ -1,26 +1,26 @@
 function getPilihanComputer(){
     const comp = Math.random();
-    if( comp < 0.20) return 'Scissor';
-    if( comp < 0.40) return 'Paper';
-    if( comp < 0.60) return 'Rock';
-    if( comp < 0.80) return 'Lizard';
-    return 'Spock';
+    if( comp < 0.20) return 'scissors';
+    if( comp < 0.40) return 'paper';
+    if( comp < 0.60) return 'rock';
+    if( comp < 0.80) return 'lizard';
+    return 'spock';
 } 
 
-let comp = getPilihanComputer()
 
-function getHasil(player, computer){
+
+function getHasil(computer, player){
 	if( player == computer ) return 'DRAW!';
     const rule = {
-        Lizard: ["Spock", "Paper"],
+        lizard: ["spock", "paper"],
       
-        Paper: ["Rock", "Spock"],
+        paper: ["rock", "spock"],
       
-        Rock: ["Lizard", "Scissor"],
+        rock: ["lizard", "scissors"],
       
-        Scissor: ["Paper", "Lizard"],
+        scissors: ["paper", "lizard"],
       
-        Spock: ["Scissor", "Rock"],
+        spock: ["scissors", "rock"],
       };
 	for (const x of rule[player]) {
         if(computer === x){
@@ -32,8 +32,8 @@ function getHasil(player, computer){
 
 //function ini dibuat agar seolah olah komputer mengacak pilihannya dengan animasi
 function putar(){
-	const imgComputer = document.querySelector('.img-computer');
-	const gambar = ['Lizard', 'Paper', 'Rock', 'Scissor', 'Spock'];
+	const imgComputer = document.querySelector('.img-komputer');
+	const gambar = ['lizard', 'paper', 'rock', 'scissors', 'spock'];
 	let i = 0;
 	const waktuMulai = new Date().getTime();
 	setInterval(function(){
@@ -41,31 +41,39 @@ function putar(){
 			clearInterval;
 			return;
 		}
-		imgComputer.setAttribute('src', 'img/' + gambar[i++] + '.png');// disini kita memilih nama folder tempat image(img/) terus nama image(pilihanComputer) nama imagenya disamakan sesuai dengan data di array gambar, extnya di sesuaikan yes
-	if(i == gambar.length) i = 0;
+		imgComputer.setAttribute('src', 'picHackathon2/' + gambar[i++] + '.png');// disini kita memilih nama folder tempat image(img/) terus nama image(pilihanComputer) nama imagenya disamakan sesuai dengan data di array gambar, extnya di sesuaikan yes
+	if(i == gambar.length - 1) i = 0;
 	}, 100)
 }
 
-const pilihan = document.querySelectorAll('li img');//disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
+let scoreComp = 0;
+let scorePlayer = 0;
+let round = 1;
+
+const pilihan = document.querySelectorAll('span img');//disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
 pilihan.forEach(function(pil){
 	pil.addEventListener('click', function(){
 		const pilihanComputer = getPilihanComputer();
 		const pilihanPlayer = pil.className;// className artinya mengambil nama class yg sudah kita pilih
 		const hasil = getHasil(pilihanComputer, pilihanPlayer);
 		
+        const imgPlayer = document.querySelector('.img-player');
+        imgPlayer.setAttribute('src', 'picHackathon2/' + pilihanPlayer + '.png');
+
 		putar();
 
 		//agar tidak langsung keluar hasilnya ketika pilihan computer sedang berputar, maka function dibawah dipause dulu selama 1 detik
+
 		setTimeout(function(){
 
 		    const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
 		    inputHasil.innerHTML = hasil
-		    const imgComputer = document.querySelector('.img-computer');//isi disini class pada gambar computer
-		    imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png');// disini kita memilih nama folder tempat image(img/) terus nama image(pilihanComputer) nama imagenya disamakan sesuai dengan data di array gambar
-	
-            let round = 1;
-            let scoreComp = 0;
-            let scorePlayer = 0;
+		    const imgComputer = document.querySelector('.img-komputer');//isi disini class pada gambar computer
+		    imgComputer.setAttribute('src', 'picHackathon2/' + pilihanComputer + '.png');// disini kita memilih nama folder tempat image(img/) terus nama image(pilihanComputer) nama imagenya disamakan sesuai dengan data di array gambar
+            
+
+;
+            // console.log(document.getElementById("player2-score").innerText)
             if(hasil === 'WIN!'){
                 scorePlayer++
                 round++
@@ -75,12 +83,12 @@ pilihan.forEach(function(pil){
             }else {
                 round++
             };
-            const ronde = document.querySelector('.info')//isi disini class pada ronde ke berapanya
-            ronde.innerHTML = round
-            const skorPemain = document.querySelector('.info')//isi disini class pada jumlah menang player ke berapanya
-            skorPemain.innerHTML = scorePlayer
-            const skorKomp = document.querySelector('.info')//isi disini class pada jumlah menang komputer ke berapanya
-            skorKomp.innerHTML = scoreComp
+            const ronde = document.getElementById('round-message')//isi disini class pada ronde ke berapanya
+            ronde.innerHTML = 'ROUND ' + round
+            const skorPemain = document.getElementById("player1-score")//isi disini class pada jumlah menang player ke berapanya
+            skorPemain.innerText = scorePlayer
+            const skorKomp = document.getElementById("player2-score")//isi disini class pada jumlah menang komputer ke berapanya
+            skorKomp.innerText = scoreComp
 
 
         }, 1000);

@@ -38,6 +38,7 @@
     flex-wrap: wrap;
     flex: 1;
     padding: 10px 25px;
+    align-self: baseline;
   }
   
   .selected-option,
