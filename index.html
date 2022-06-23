@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Spock Lizard Game </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rock Paper Scissors Spock Lizard</h1>
+    </header>
+
+    <div class="score-board">
+        <div id="user-name" class="badge">User Name</div>
+        <div id="computer-name" class="badge">Mr.AI</div>
+        <p id="round">Round 1</p>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div> 
+
+    <div class="result">
+    <p> You Win ! </p>
+    </div>
+
+    <div class="choices">
+        <div class="choices" id="rock">
+            <img src="iamge/rock.png" alt="rock">
+        </div>
+        <div class="choices" id="paper">
+            <img src="image/paper.png" alt="paper">
+        </div>
+        <div class="choices" id="scissors">
+            <img src="image/scissors.png" alt="scissors">
+        </div>
+        <div class="choices" id="spock">
+            <img src="image/spock.png" alt="spock">
+        </div>
+        <div class="choices" id="lizard">
+            <img src="image/lizard.png" alt="lizard">
+        <div>
+            <button type="button" id="load-button" class="tombol">PLAY</button>
+        </div>
+        </div>
+    </div>
+
+    <p id="action-message">Choose your option !</p>
+    <!-- tombol reset -->
+    <span class="reset"><span>Reset</span></span>
+    <script src="./index.js"></script>
+</body>
+</html>
