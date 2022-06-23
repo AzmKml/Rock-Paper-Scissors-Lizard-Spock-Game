@@ -1,0 +1,17 @@
+/// POP UP SCREEN
+
+1. input nama
+2. pilihan ronde
+
+/// GAME
+
+1. pilih input
+2. computer generate 
+
+/// END SCREEN
+
+1. win/lose, score
+2. play again || end
+3. play again tanpa input nama || thank you for playing
+4. kalo thank you pilihan new game
+5. input nama lagi
