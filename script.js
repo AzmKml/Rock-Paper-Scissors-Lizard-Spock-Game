@@ -71,7 +71,7 @@ let round = 0;
 const ronde = document.getElementById('round-message')//isi disini class pada ronde ke berapanya
 const skorPemain = document.getElementById("player1-score")//isi disini class pada jumlah menang player ke berapanya
 const skorKomp = document.getElementById("player2-score")//isi disini class pada jumlah menang komputer ke berapanya
-
+let hidePilihan = document.getElementsByClassName('available-options')[0]
 
 
 
@@ -87,7 +87,7 @@ pilihan.forEach(function(pil){
         imgPlayer.setAttribute('src', 'picHackathon2/' + pilihanPlayer + '.png');
 
 
-        let hidePilihan = document.getElementsByClassName('available-options')[0]
+        
         hidePilihan.className += ' hide'
         console.log(hidePilihan)
 		putar();
@@ -111,11 +111,12 @@ pilihan.forEach(function(pil){
             if(Number(maxRound) - 1=== round){
                 
                 if(scorePlayer > scoreComp){
-                    endResult = 'Congratulations you WIN! but that is just a fluke!'
+                    endResult = `You managed to defeat Mr. AI! Now peace will be restored to the whole galaxy.. 
+                    or is it?`
                 }else if(scorePlayer < scoreComp){
-                    endResult = `So sad, you LOSE! be better next time loser ho ho ho`
+                    endResult = `Mr. AI defeated you and preparing himself to fight on other galaxies.. but it's not too late to TRY AGAIN!`
                 }else{
-                    endResult = `I cant believe we had a DRAW! i want a rematch!`
+                    endResult = `YOU and Mr. AI decided to call it a day. It seems both your powers are equal. TRY AGAIN!`
                 }
                 // alert(endResult)
                 setTimeout(function() {
@@ -123,24 +124,30 @@ pilihan.forEach(function(pil){
                
                     document.querySelector('.modal-end').className = "modal-end"
                     document.getElementById('final-result').innerText = endResult
+                    hidePilihan.className = "available-options"
+
                 }, 1000)
+            }else {
+                hidePilihan.className = "available-options"
             }
+                if(hasil === "IT'S WIN!"){
+                    scorePlayer++
+                    round++
+                }else if (hasil === "IT'S LOSE"){
+                    scoreComp++
+                    round++
+                }else {
+                    round++
+                };
+                ronde.innerHTML = 'ROUND ' + round + '/' + maxRound
+                skorPemain.innerText = scorePlayer
+                skorKomp.innerText = scoreComp
+                
+                    
+                
 
 ;
             // console.log(document.getElementById("player2-score").innerText)
-            if(hasil === "IT'S WIN!"){
-                scorePlayer++
-                round++
-            }else if (hasil === "IT'S LOSE"){
-                scoreComp++
-                round++
-            }else {
-                round++
-            };
-            ronde.innerHTML = 'ROUND ' + round + '/' + maxRound
-            skorPemain.innerText = scorePlayer
-            skorKomp.innerText = scoreComp
-            hidePilihan.className = "available-options"
 
         }, 1000);
 
@@ -156,7 +163,7 @@ reset.addEventListener('click', function(){
     skorKomp.innerText = 0
     scoreComp = 0;
     scorePlayer = 0;
-    round = 1;
+    round = 0;
     document.querySelector('.modal-end').className += " hide"
     const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
     // inputHasil.innerText = 'RESET'
@@ -177,7 +184,8 @@ playagain.addEventListener('click', function(){
     skorKomp.innerText = 0
     scoreComp = 0;
     scorePlayer = 0;
-    round = 1;
+    round = 0;
+    hidePilihan.className = "available-options"
     document.querySelector('.modal-end').className += " hide"
     const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
     inputHasil.innerText = 'REMATCH'

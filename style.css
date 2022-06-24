@@ -14,7 +14,7 @@
   /* Score style */
   #result {
     flex: 1 100%;
-    color: antiquewhite;
+    color:white;
   }
   
   #round-message,
@@ -57,7 +57,7 @@
   
   .name {
     font-size: 1.8em;
-    color: rgb(121, 99, 63);
+    color: white;
     font-weight: 600;
   }
   
@@ -74,10 +74,10 @@
     height: 75px;
     padding: 10px;
     border-radius: 50%;
-    border: 1px solid #f44336;
+    border: 1px solid #a37471;
     box-shadow: 0 0 3px;
     cursor: pointer;
-    background-color: antiquewhite;
+    background-color: rgb(112, 110, 106);
     margin: 0 20px;
   }
   
