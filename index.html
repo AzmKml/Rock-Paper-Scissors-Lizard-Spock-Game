@@ -11,32 +11,25 @@
 </head>
 
 <body>
-    <div class="modal">
-        <h1 style="position: absolute; top: 0; left: 50px; color: red; font-size: 50px;"></h1>
-        <div class="style1">
-            <!-- <h1> Masuk </h1> -->
-            <div class="style3">
-                <div>
-                    
-                    <h1 class="judul">ROCK, PAPER, SCISSORS.... <br/>LIZARD, SPOCK</h1>
-                    <h3 style="color: white;"><br/>"In a star system far away... <br/><br/> SPOCK really needs your help to beat a super AI ran amok.."<br/></h3>
-                    <h2 style="color: white;"> <br/>Tell us your name! </h1>
-                    <input id="style1" type="text"  required placeholder="Name..">
+    <div class="modal" >
+
+        <!-- <h1> Masuk </h1> -->
+        <div class="style3">
+            <div>
+
+                <h1 class="judul">ROCK, PAPER, SCISSORS.... <br />LIZARD, SPOCK</h1>
+                <h3 style="color: white;"><br />"In a star system far away... <br /><br /> SPOCK really needs your
+                    help to beat a super AI ran amok.."<br /></h3>
+                <h2 style="color: white;"> <br />Tell us your name! </h1>
+                    <input id="style1" type="text" required placeholder="Name..">
                     <!-- <input id="style1" type="round" placeholder="Kata sandi">  -->
                     <h2 style="color: white;">How many round do you need?</h3>
-                    <input id="style1" class="roundNeeded" required type="number" placeholder="Rounds.. e.g: 8">
-                    <!-- <div class="dropdown">
-                        <button class="dropbtn">Dropdown</button>
-                        <div class="dropdown-content">
-                          <a href="#">5</a>
-                          <a href="#">7</a>
-                          <a href="#">9</a>
-                        </div>
-                      </div> -->
-                    <button id="style2" class="go">Go </button>
-                </div>
+                        <input id="style1" class="roundNeeded" required type="number" placeholder="Rounds.. e.g: 8">
+
+                        <button id="style2" class="go">Go </button>
             </div>
         </div>
+
     </div>
 
     <!-- result -->
@@ -51,26 +44,18 @@
                     <span class="info">result</span>
                 </div>
             </div>
-            
+
         </section>
-    
+
         <!-- section game yang dibagi dua layarnya -->
-    
+
         <section id="player1" class="players">
             <span class="name">userName</span>
             <!-- yang dipilih akan muncul ke sini -->
             <div class="selected-option">
-                <span class="option" data-index="0"><img class="img-player" style="width:50px"></span>
+                <span class="option" data-index="0"><img class="img-player" style="width:120px"></span>
             </div>
 
-            <!-- plihan -->
-            <div class="available-options">
-                <span class="option" data-index="0"><img class="lizard" src="picHackathon2/lizard.png" alt="Lizard" style="width:50px"></span>
-                <span class="option" data-index="1"><img class="paper" src="picHackathon2/paper.png" alt="Paper" style="width:50px"></span>
-                <span class="option" data-index="2"><img class="rock" src="picHackathon2/rock.png" alt="Rock" style="width:50px"></span>
-                <span class="option" data-index="3"><img class="scissors" src="picHackathon2/scissors.png" alt="Scissor" style="width:50px"></span>
-                <span class="option" data-index="4"><img class="spock" src="picHackathon2/spock.png" alt="Spock" style="width:50px"></span>
-            </div>
         </section>
 
 
@@ -78,14 +63,45 @@
             <span class="name">Mr. AI</span>
             <!-- yang dipilih akan muncul ke sini -->
             <div class="selected-option">
-                <span class="option" data-index="0"><img class="img-komputer" style="width:50px"></span>
+                <span class="option" data-index="0"><img class="img-komputer" style="width:120px"></span>
             </div>
 
         </section>
 
+        <!-- plihan -->
+        <div class="available-options">
+            <span class="option" data-index="0"><img class="lizard" src="picHackathon2/lizard.png" alt="Lizard"
+                    style="width:50px"></span>
+            <span class="option" data-index="1"><img class="paper" src="picHackathon2/paper.png" alt="Paper"
+                    style="width:50px"></span>
+            <span class="option" data-index="2"><img class="rock" src="picHackathon2/rock.png" alt="Rock"
+                    style="width:50px"></span>
+            <span class="option" data-index="3"><img class="scissors" src="picHackathon2/scissors.png" alt="Scissor"
+                    style="width:50px"></span>
+            <span class="option" data-index="4"><img class="spock" src="picHackathon2/spock.png" alt="Spock"
+                    style="width:50px"></span>
+        </div>
         <!-- Reset button -->
-        <span class="reset"><span>Reset</span></span>
+        <!-- <span class="reset"><span>Reset</span></span> -->
     </main>
+
+    <div class="modal-end hide">
+        <div class="style1">
+            <div class="style3">
+
+                <div>
+                    <!-- di h1 nanti hasil yg tadi dialert akan ditampilkan -->
+                    <h1 id="final-result">YOU WIN!!!</h1> 
+                    <h1>Thank you for Playing with us</h2>
+                        <button id="style2" class="rematch">REMATCH</button>
+                        <button id="style2" class="end">END GAME</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

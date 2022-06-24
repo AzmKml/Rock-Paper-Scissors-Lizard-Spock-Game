@@ -14,6 +14,7 @@
   /* Score style */
   #result {
     flex: 1 100%;
+    color: antiquewhite;
   }
   
   #round-message,
@@ -56,13 +57,13 @@
   
   .name {
     font-size: 1.8em;
-    color: #f44336;
+    color: rgb(121, 99, 63);
     font-weight: 600;
   }
   
   /* Options Style */
   .available-options {
-    justify-content: space-between;
+    justify-content: center;
   }
   
   .option {
@@ -76,6 +77,8 @@
     border: 1px solid #f44336;
     box-shadow: 0 0 3px;
     cursor: pointer;
+    background-color: antiquewhite;
+    margin: 0 20px;
   }
   
   .option.active {
@@ -92,8 +95,8 @@
   }
   
   .selected-option > .option {
-    width: 110px;
-    height: 110px;
+    width: 200px;
+    height: 200px;
   }
 
 

@@ -29,7 +29,7 @@ function getPilihanComputer(){
 
 
 function getHasil(computer, player){
-	if( player == computer ) return 'DRAW!';
+	if( player == computer ) return "IT'S DRAW!";
     const rule = {
         lizard: ["spock", "paper"],
       
@@ -43,10 +43,10 @@ function getHasil(computer, player){
       };
 	for (const x of rule[player]) {
         if(computer === x){
-            return "WIN!"
+            return "IT'S WIN!"
         }
     }
-    return 'LOSE!'
+    return "IT'S LOSE"
 }
 
 //function ini dibuat agar seolah olah komputer mengacak pilihannya dengan animasi
@@ -116,10 +116,10 @@ pilihan.forEach(function(pil){
 
 ;
             // console.log(document.getElementById("player2-score").innerText)
-            if(hasil === 'WIN!'){
+            if(hasil === "IT'S WIN!"){
                 scorePlayer++
                 round++
-            }else if (hasil === 'LOSE!'){
+            }else if (hasil === "IT'S LOSE"){
                 scoreComp++
                 round++
             }else {
