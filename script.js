@@ -1,3 +1,22 @@
+
+let username = ''
+let maxRound = 0
+let loginPage = document.querySelector('.go')
+//document.querySelector('.go')document.getElementById("style2")
+loginPage.addEventListener('click', function(){
+    username = document.getElementById('style1').value
+    document.querySelector('.name').innerText = username
+    maxRound = document.querySelector('.roundNeeded').value
+    console.log(username, maxRound)
+    if(username && maxRound){
+    document.querySelector('.modal').className += " hide"
+    }else{
+        return alert `Input are invalid`
+    }
+})
+
+
+
 function getPilihanComputer(){
     const comp = Math.random();
     if( comp < 0.20) return 'scissors';
@@ -49,6 +68,12 @@ function putar(){
 let scoreComp = 0;
 let scorePlayer = 0;
 let round = 1;
+const ronde = document.getElementById('round-message')//isi disini class pada ronde ke berapanya
+const skorPemain = document.getElementById("player1-score")//isi disini class pada jumlah menang player ke berapanya
+const skorKomp = document.getElementById("player2-score")//isi disini class pada jumlah menang komputer ke berapanya
+
+
+
 
 const pilihan = document.querySelectorAll('span img');//disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
 pilihan.forEach(function(pil){
@@ -56,13 +81,17 @@ pilihan.forEach(function(pil){
 		const pilihanComputer = getPilihanComputer();
 		const pilihanPlayer = pil.className;// className artinya mengambil nama class yg sudah kita pilih
 		const hasil = getHasil(pilihanComputer, pilihanPlayer);
-		
+		// console.log('asd')
         const imgPlayer = document.querySelector('.img-player');
         imgPlayer.setAttribute('src', 'picHackathon2/' + pilihanPlayer + '.png');
 
 		putar();
 
 		//agar tidak langsung keluar hasilnya ketika pilihan computer sedang berputar, maka function dibawah dipause dulu selama 1 detik
+
+ 
+
+
 
 		setTimeout(function(){
 
@@ -71,6 +100,19 @@ pilihan.forEach(function(pil){
 		    const imgComputer = document.querySelector('.img-komputer');//isi disini class pada gambar computer
 		    imgComputer.setAttribute('src', 'picHackathon2/' + pilihanComputer + '.png');// disini kita memilih nama folder tempat image(img/) terus nama image(pilihanComputer) nama imagenya disamakan sesuai dengan data di array gambar
             
+            let endResult = ''//dom
+            console.log(maxRound, round)
+            if(Number(maxRound) === round){
+                
+                if(scorePlayer > scoreComp){
+                    endResult = 'Congratulations you WIN! but that is just a fluke!'
+                }else if(scorePlayer < scoreComp){
+                    endResult = `So sad, you LOSE! be better next time loser ho ho ho`
+                }else{
+                    endResult = `I cant believe we had a DRAW! i want a rematch!`
+                }
+                alert(endResult)
+            }
 
 ;
             // console.log(document.getElementById("player2-score").innerText)
@@ -83,11 +125,8 @@ pilihan.forEach(function(pil){
             }else {
                 round++
             };
-            const ronde = document.getElementById('round-message')//isi disini class pada ronde ke berapanya
             ronde.innerHTML = 'ROUND ' + round
-            const skorPemain = document.getElementById("player1-score")//isi disini class pada jumlah menang player ke berapanya
             skorPemain.innerText = scorePlayer
-            const skorKomp = document.getElementById("player2-score")//isi disini class pada jumlah menang komputer ke berapanya
             skorKomp.innerText = scoreComp
 
 
@@ -97,6 +136,37 @@ pilihan.forEach(function(pil){
 });
 
 
+let reset = document.querySelector('.reset')
+reset.addEventListener('click', function(){
+    ronde.innerHTML = 'ROUND ' + 1
+    skorPemain.innerText = 0
+    skorKomp.innerText = 0
+    scoreComp = 0;
+    scorePlayer = 0;
+    round = 1;
+    const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
+    inputHasil.innerText = 'RESET'
+    const imgPlayer = document.querySelector('.img-player');
+    imgPlayer.removeAttribute('src')
+    const imgComputer = document.querySelector('.img-komputer');
+    imgComputer.removeAttribute('src')
+    document.querySelector('.modal').className = "modal"
+    document.getElementById('style1').value = ''
+    document.querySelector('.roundNeeded').value = ''
+})
+
+
+
+
+/*
+
+
+
+
+
+
+
+*/
 
 
 
