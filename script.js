@@ -74,7 +74,7 @@ let hidePilihan = document.getElementsByClassName('available-options')[0]
 
 
 
-const pilihan = document.querySelectorAll('span img'); //disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
+const pilihan = document.querySelectorAll('div img'); //disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
 pilihan.forEach(function (pil) {
     pil.addEventListener('click', function () {
         // console.log(pil)

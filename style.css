@@ -28,7 +28,7 @@ main {
 #round-message {
   font-size: 3em;
   margin-bottom: 0;
-
+  margin-top: 12px;
   text-transform: capitalize;
 }
 
@@ -69,7 +69,21 @@ main {
 .available-options {
   justify-content: center;
 }
-
+#result {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.block {
+  display: block;
+  border: 1px solid white;
+  border-radius: 2.15em;
+  background-color: black;
+  background-blend-mode: lighten;
+  align-self: center;
+  width: 25vw !important;
+  padding-bottom: 12px;
+}
 
 .option {
   display: inline-flex;

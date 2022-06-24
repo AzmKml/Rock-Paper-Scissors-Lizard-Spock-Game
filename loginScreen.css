@@ -51,7 +51,7 @@ h3 {
 
 
 .hide {
-    display: none;
+    visibility: hidden;
 }
 
 #style1 {
