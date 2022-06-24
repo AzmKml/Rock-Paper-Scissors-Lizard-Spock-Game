@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.05em;
+
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Score style */
+#result {
+  flex: 1 100%;
+  color: rgb(222, 182, 72);
+}
+
+#round-message,
+#score {
+  text-align: center;
+}
+
+#round-message {
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-top: 12px;
+  text-transform: capitalize;
+}
+
+#score {
+  font-size: 3em;
+}
+
+
+/* Player style */
+.players {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 10px 25px;
+  align-self: baseline;
+}
+
+.selected-option,
+.name,
+.available-options {
+  display: inline-flex;
+  flex: 1 100%;
+}
+
+.selected-option,
+.name {
+  justify-content: center;
+}
+
+.name {
+  font-size: 3em;
+  color: rgb(222, 182, 72);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Options Style */
+.available-options {
+  justify-content: center;
+}
+#result {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.block {
+  display: block;
+  border: 1px solid white;
+  border-radius: 2.15em;
+  background-color: black;
+  background-blend-mode: lighten;
+  align-self: center;
+  width: 25vw !important;
+  padding-bottom: 12px;
+}
+
+.option {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #a37471;
+  box-shadow: 0 0 3px;
+  cursor: pointer;
+  background-color: rgb(51, 51, 51);
+  margin: 0 20px;
+}
+
+.option.active {
+  border-color: blue;
+}
+
+.available-options>.option:hover {
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+}
+
+
+.selected-option>.option {
+  width: 230px;
+  height: 230px;
+}

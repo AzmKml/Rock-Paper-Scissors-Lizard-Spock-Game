@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissor, Lizard, Spock Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginScreen.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="modal">
+
+        <!-- <h1> Masuk </h1> -->
+        <div class="style3">
+            <div class="container">
+
+                <h1 class="judul">ROCK, PAPER, SCISSORS.... <br />LIZARD, SPOCK</h1>
+                <h3 style="color: white;"><br />"In a star system far away... <br /><br /> SPOCK really needs your
+                    help to beat a super AI ran amok.."<br /></h3>
+                <h2 style="color: white;"> <br />Tell us your name! </h1>
+                    <input id="style1" type="text" required placeholder="Name..">
+                    <!-- <input id="style1" type="round" placeholder="Kata sandi">  -->
+                    <h2 style="color: white;">How many round do you need?</h3>
+                        <input id="style1" class="roundNeeded" required type="number" placeholder="Rounds.. e.g: 8">
+
+                        <button id="style2" class="go">Go </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- result -->
+    <main>
+        <section id="result">
+            <div class="block">
+                <h1 id="round-message">ROUND <span>1</span></h1>
+                <div id="score">
+                    <span id="player1-score" class="points">0</span>
+                    :
+                    <span id="player2-score" class="points">0</span>
+                    <div>
+                        <span class="info">result</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- section game yang dibagi dua layarnya -->
+
+        <section id="player1" class="players">
+            <span class="name">userName</span>
+            <!-- yang dipilih akan muncul ke sini -->
+            <div class="selected-option">
+                <span class="option" data-index="0"><img class="img-player" style="width:140px"></span>
+            </div>
+
+        </section>
+
+
+        <section id="player2" class="players">
+            <span class="name">Mr. AI</span>
+            <!-- yang dipilih akan muncul ke sini -->
+            <div class="selected-option">
+                <span class="option" data-index="0"><img class="img-komputer" style="width:140px"></span>
+            </div>
+
+        </section>
+
+        <!-- plihan -->
+        <div class="available-options">
+            <div class="option" data-index="0"><img class="lizard" src="picHackathon2/lizard.png" alt="Lizard"
+                    style="width:60px"></div>
+            <div class="option" data-index="1"><img class="paper" src="picHackathon2/paper.png" alt="Paper"
+                    style="width:60px"></div>
+            <div class="option" data-index="2"><img class="rock" src="picHackathon2/rock.png" alt="Rock"
+                    style="width:70px"></div>
+            <div class="option" data-index="3"><img class="scissors" src="picHackathon2/scissors.png" alt="Scissor"
+                    style="width:60px"></div>
+            <div class="option" data-index="4"><img class="spock" src="picHackathon2/spock.png" alt="Spock"
+                    style="width:60px"></div>
+        </div>
+        <!-- Reset button -->
+        <!-- <span class="reset"><span>Reset</span></span> -->
+    </main>
+
+    <div class="modal-end hide">
+        <div class="style1">
+            <div class="style3">
+
+                <div class="container">
+                    <!-- di h1 nanti hasil yg tadi dialert akan ditampilkan -->
+                    <h1 id="final-result">YOU WIN!!!</h1>
+                    <h1>Thank you for Playing with us</h2>
+                        <button id="style2" class="rematch">REMATCH</button>
+                        <button id="style2" class="end">END GAME</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
