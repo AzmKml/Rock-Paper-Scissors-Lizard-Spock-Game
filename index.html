@@ -8,14 +8,15 @@
     <title>Rock, Paper, Scissor, Lizard, Spock Game</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loginScreen.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="modal" >
+    <div class="modal">
 
         <!-- <h1> Masuk </h1> -->
         <div class="style3">
-            <div>
+            <div class="container">
 
                 <h1 class="judul">ROCK, PAPER, SCISSORS.... <br />LIZARD, SPOCK</h1>
                 <h3 style="color: white;"><br />"In a star system far away... <br /><br /> SPOCK really needs your
@@ -35,7 +36,7 @@
     <!-- result -->
     <main>
         <section id="result">
-            <p id="round-message">ROUND <span>1</span></p>
+            <h1 id="round-message">ROUND <span>1</span></h1>
             <div id="score">
                 <span id="player1-score" class="points">0</span>
                 :
@@ -53,7 +54,7 @@
             <span class="name">userName</span>
             <!-- yang dipilih akan muncul ke sini -->
             <div class="selected-option">
-                <span class="option" data-index="0"><img class="img-player" style="width:120px"></span>
+                <span class="option" data-index="0"><img class="img-player" style="width:140px"></span>
             </div>
 
         </section>
@@ -63,7 +64,7 @@
             <span class="name">Mr. AI</span>
             <!-- yang dipilih akan muncul ke sini -->
             <div class="selected-option">
-                <span class="option" data-index="0"><img class="img-komputer" style="width:120px"></span>
+                <span class="option" data-index="0"><img class="img-komputer" style="width:140px"></span>
             </div>
 
         </section>
@@ -89,9 +90,9 @@
         <div class="style1">
             <div class="style3">
 
-                <div>
+                <div class="container">
                     <!-- di h1 nanti hasil yg tadi dialert akan ditampilkan -->
-                    <h1 id="final-result">YOU WIN!!!</h1> 
+                    <h1 id="final-result">YOU WIN!!!</h1>
                     <h1>Thank you for Playing with us</h2>
                         <button id="style2" class="rematch">REMATCH</button>
                         <button id="style2" class="end">END GAME</button>

@@ -5,25 +5,26 @@ body {
     height: 100vh;
     overflow: hidden;
     background-image: url(./picHackathon2/background.png);
+    font-family: 'VT323', monospace;
 }
 
 h1 {
     font-size: 28px;
-    color:rgb(222, 182, 72);
+    color: rgb(222, 182, 72);
 }
+
+h1,
+h2,
 h3 {
-    font-size: 12px;
-}
-h2 {
-    font-size: 17px;
+    letter-spacing: 0.05em;
 }
 
 #judul h1 {
-    color:rgb(222, 182, 72);
-    
+    color: rgb(222, 182, 72);
+
 }
 
-.modal  {
+.modal {
     position: absolute;
     /* top: 40%;
     left: 30%;
@@ -41,16 +42,16 @@ h2 {
     width: 100vw;
 }
 
+.container {
+
+    display: inline-block;
+    width: 40%;
+    margin: 0 auto;
+}
+
 
 .hide {
     display: none;
-}
-
-.style1 form {
-    background-color: rgba(0, 0, 0, 1);
-    height: 80vh;
-    border-radius: 10px;
-    padding: 20px 80px;
 }
 
 #style1 {
@@ -58,7 +59,7 @@ h2 {
     border-radius: 10px;
     background-color: rgb(51, 51, 51);
     color: lightgray;
-    font-size: 16px;
+    font-size: 23px;
     margin: 10px 0;
     width: 100%;
     border: none;
@@ -89,6 +90,5 @@ h2 {
 
 #style2:hover {
     background-color: #443a7ec1;
-    transform:scale(1.2)
+    transform: scale(1.1)
 }
-
