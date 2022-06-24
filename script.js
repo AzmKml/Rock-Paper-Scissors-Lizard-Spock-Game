@@ -67,7 +67,7 @@ function putar(){
 
 let scoreComp = 0;
 let scorePlayer = 0;
-let round = 1;
+let round = 0;
 const ronde = document.getElementById('round-message')//isi disini class pada ronde ke berapanya
 const skorPemain = document.getElementById("player1-score")//isi disini class pada jumlah menang player ke berapanya
 const skorKomp = document.getElementById("player2-score")//isi disini class pada jumlah menang komputer ke berapanya
@@ -78,6 +78,7 @@ const skorKomp = document.getElementById("player2-score")//isi disini class pada
 const pilihan = document.querySelectorAll('span img');//disini kita memilih semua image yg akan jadi pilihan player yg dibuat sebagai list 
 pilihan.forEach(function(pil){
 	pil.addEventListener('click', function(){
+        // console.log(pil)
 		const pilihanComputer = getPilihanComputer();
 		const pilihanPlayer = pil.className;// className artinya mengambil nama class yg sudah kita pilih
 		const hasil = getHasil(pilihanComputer, pilihanPlayer);
@@ -85,6 +86,10 @@ pilihan.forEach(function(pil){
         const imgPlayer = document.querySelector('.img-player');
         imgPlayer.setAttribute('src', 'picHackathon2/' + pilihanPlayer + '.png');
 
+
+        let hidePilihan = document.getElementsByClassName('available-options')[0]
+        hidePilihan.className += ' hide'
+        console.log(hidePilihan)
 		putar();
 
 		//agar tidak langsung keluar hasilnya ketika pilihan computer sedang berputar, maka function dibawah dipause dulu selama 1 detik
@@ -102,7 +107,8 @@ pilihan.forEach(function(pil){
             
             let endResult = ''//dom
             console.log(maxRound, round)
-            if(Number(maxRound) === round){
+
+            if(Number(maxRound) - 1=== round){
                 
                 if(scorePlayer > scoreComp){
                     endResult = 'Congratulations you WIN! but that is just a fluke!'
@@ -111,7 +117,13 @@ pilihan.forEach(function(pil){
                 }else{
                     endResult = `I cant believe we had a DRAW! i want a rematch!`
                 }
-                alert(endResult)
+                // alert(endResult)
+                setTimeout(function() {
+                    
+               
+                    document.querySelector('.modal-end').className = "modal-end"
+                    document.getElementById('final-result').innerText = endResult
+                }, 1000)
             }
 
 ;
@@ -125,10 +137,10 @@ pilihan.forEach(function(pil){
             }else {
                 round++
             };
-            ronde.innerHTML = 'ROUND ' + round
+            ronde.innerHTML = 'ROUND ' + round + '/' + maxRound
             skorPemain.innerText = scorePlayer
             skorKomp.innerText = scoreComp
-
+            hidePilihan.className = "available-options"
 
         }, 1000);
 
@@ -136,16 +148,18 @@ pilihan.forEach(function(pil){
 });
 
 
-let reset = document.querySelector('.reset')
+let reset = document.querySelector('.end')
 reset.addEventListener('click', function(){
+    console.log('end')
     ronde.innerHTML = 'ROUND ' + 1
     skorPemain.innerText = 0
     skorKomp.innerText = 0
     scoreComp = 0;
     scorePlayer = 0;
     round = 1;
+    document.querySelector('.modal-end').className += " hide"
     const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
-    inputHasil.innerText = 'RESET'
+    // inputHasil.innerText = 'RESET'
     const imgPlayer = document.querySelector('.img-player');
     imgPlayer.removeAttribute('src')
     const imgComputer = document.querySelector('.img-komputer');
@@ -155,7 +169,24 @@ reset.addEventListener('click', function(){
     document.querySelector('.roundNeeded').value = ''
 })
 
-
+let playagain = document.querySelector('.rematch')
+playagain.addEventListener('click', function(){
+    console.log('remacth')
+    ronde.innerHTML = 'ROUND ' + 1 + ' / ' + maxRound
+    skorPemain.innerText = 0
+    skorKomp.innerText = 0
+    scoreComp = 0;
+    scorePlayer = 0;
+    round = 1;
+    document.querySelector('.modal-end').className += " hide"
+    const inputHasil = document.querySelector('.info');//input di dalam() class pada element untuk win/lose/draw
+    inputHasil.innerText = 'REMATCH'
+    const imgPlayer = document.querySelector('.img-player');
+    imgPlayer.removeAttribute('src')
+    const imgComputer = document.querySelector('.img-komputer');
+    imgComputer.removeAttribute('src')
+    // document.querySelector('.playagain').className += " hide"
+})
 
 
 /*
